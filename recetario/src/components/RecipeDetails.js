@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../utils/colors';
 import React from 'react';
 import HeadDetails from './HeadDetails';
+import BodyDetails from './BodyDetails';
 
 const RecipeDetails = () => {
   return (
@@ -13,6 +14,7 @@ const RecipeDetails = () => {
           source={{uri: 'https://i.imgur.com/tKSjPKd.jpg'}}
         />
         <HeadDetails />
+        <BodyDetails />
       </View>
     </View>
   );
