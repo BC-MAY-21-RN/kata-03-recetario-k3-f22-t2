@@ -5,7 +5,7 @@ import React from 'react';
 import HeadDetails from './HeadDetails';
 import BodyDetails from './BodyDetails';
 
-const RecipeDetails = () => {
+const RecipeDetails = ({recipe}) => {
   return (
     <View style={styles.container}>
       <View style={styles.platillo}>
@@ -13,8 +13,8 @@ const RecipeDetails = () => {
           style={styles.image}
           source={{uri: 'https://i.imgur.com/tKSjPKd.jpg'}}
         />
-        <HeadDetails />
-        <BodyDetails />
+        <HeadDetails recipeName={recipe.name} />
+        <BodyDetails recipeIngredients={recipe.ingredients}/>
       </View>
     </View>
   );

@@ -16,31 +16,13 @@ import RecipeDetails from './src/components/RecipeDetails';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const App = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+  
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar />
       <HorizontalList />
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
-        <RecipeDetails />
-        <Pressable
-          style={styles.close}
-          onPress={() => setModalVisible(!modalVisible)}>
-          <Icon name="close" size={30} color="#ffffff" />
-        </Pressable>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
+
+
     </SafeAreaView>
   );
 };

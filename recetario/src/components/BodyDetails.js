@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
 import Ingredient from './Ingredient';
 
-const BodyDetails = () => {
+const BodyDetails = ({recipeIngredients}) => {
   return (
     <View>
       <View>
@@ -10,8 +10,12 @@ const BodyDetails = () => {
         <Text style={styles.colorIngredient}>for 3 Servings</Text>
       </View>
       <View>
-        <Ingredient />
-        <Ingredient />
+        <FlatList
+            data={recipeIngredients}
+            renderItem={({item}) => <Ingredient ingredients={item} />}
+            showsHorizontalScrollIndicator={true}
+            keyExtractor={ingredients => ingredients.id}
+          />
       </View>
     </View>
   );

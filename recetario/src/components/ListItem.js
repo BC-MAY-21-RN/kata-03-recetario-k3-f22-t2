@@ -1,12 +1,32 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, Pressable, Alert, Modal } from 'react-native'
+import React, {useState } from 'react'
+import RecipeDetails from './RecipeDetails';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-
-const ListItem = ( {recipe}) => {
+const ListItem = ( {recipe}) => {   
+    const [modalVisible, setModalVisible] = useState(false);  
     return (
         <View style={styles.container}>
-            <Image style={[recipe.category == 'Trending' ? styles.imgTreding : styles.imgRecent, {borderRadius: 10}]}  source={{ uri: recipe.image}}/>
+            <Pressable onPress={() => setModalVisible(true)} >
+                <Image style={[recipe.category == 'Trending' ? styles.imgTreding : styles.imgRecent, {borderRadius: 10}]}  source={{ uri: recipe.image}}/>
+            </Pressable>
             <Text style={styles.title}>{recipe.name}</Text>
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+                setModalVisible(!modalVisible);
+                }}>
+                <RecipeDetails recipe={recipe} />
+                <Pressable
+                style={styles.close}
+                onPress={() => setModalVisible(!modalVisible)}>
+                <Icon name="close" size={30} color="#ffffff" />
+                </Pressable>
+            </Modal>
         </View>
     )
 }
@@ -31,5 +51,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingBottom: 15
         
-    }
+    },
+    close: {
+        position: 'absolute',
+        left: 15,
+        top: 15,
+    },
 });

@@ -2,12 +2,12 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import colors from '../utils/colors';
 
-const Ingredient = () => {
+const Ingredient = ({ingredients}) => {
   return (
     <View style={styles.container}>
       <View style={styles.ingredient}>
-        <Text style={styles.ingredientText}>puff pastry</Text>
-        <Text style={styles.ingredientText}>1 sheet</Text>
+        <Text style={styles.ingredientText}>{ingredients.nameIngredient}</Text>
+        <Text style={styles.ingredientText}>{ingredients.cant}</Text>
       </View>
     </View>
   );
