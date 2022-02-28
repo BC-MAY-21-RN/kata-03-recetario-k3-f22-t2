@@ -11,11 +11,11 @@ const BodyDetails = ({recipeIngredients}) => {
       </View>
       <View>
         <FlatList
-            data={recipeIngredients}
-            renderItem={({item}) => <Ingredient ingredients={item} />}
-            showsHorizontalScrollIndicator={true}
-            keyExtractor={ingredients => ingredients.id}
-          />
+          data={recipeIngredients}
+          renderItem={({item}) => <Ingredient ingredients={item} />}
+          showsHorizontalScrollIndicator={true}
+          keyExtractor={ingredients => ingredients.id}
+        />
       </View>
     </View>
   );

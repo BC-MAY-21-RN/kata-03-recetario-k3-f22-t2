@@ -9,12 +9,9 @@ const RecipeDetails = ({recipe}) => {
   return (
     <View style={styles.container}>
       <View style={styles.platillo}>
-        <Image
-          style={styles.image}
-          source={{uri: 'https://i.imgur.com/tKSjPKd.jpg'}}
-        />
+        <Image style={styles.image} source={{uri: recipe.image}} />
         <HeadDetails recipeName={recipe.name} />
-        <BodyDetails recipeIngredients={recipe.ingredients}/>
+        <BodyDetails recipeIngredients={recipe.ingredients} />
       </View>
     </View>
   );
