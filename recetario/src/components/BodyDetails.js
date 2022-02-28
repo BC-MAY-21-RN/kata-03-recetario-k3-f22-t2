@@ -2,21 +2,21 @@ import {StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
 import Ingredient from './Ingredient';
 
-const BodyDetails = ({recipeIngredients}) => {
+const BodyDetails = ({recipe}) => {
   return (
-    <View>
-      <View>
+    <View style={styles.container}>
+      <View style={styles.title}>
         <Text style={styles.colorIngredient}>Ingredients</Text>
-        <Text style={styles.colorIngredient}>for 3 Servings</Text>
+        <Text style={styles.colorIngredient}>
+          for {recipe.servings} Servings
+        </Text>
       </View>
-      <View>
-        <FlatList
-          data={recipeIngredients}
-          renderItem={({item}) => <Ingredient ingredients={item} />}
-          showsHorizontalScrollIndicator={true}
-          keyExtractor={ingredients => ingredients.id}
-        />
-      </View>
+
+      <FlatList
+        data={recipe.ingredients}
+        renderItem={({item}) => <Ingredient ingredients={item} />}
+        keyExtractor={ingredients => ingredients.id}
+      />
     </View>
   );
 };
@@ -24,5 +24,15 @@ const BodyDetails = ({recipeIngredients}) => {
 export default BodyDetails;
 
 const styles = StyleSheet.create({
-  colorIngredient: {color: 'white'},
+  container: {
+    flex: 1,
+  },
+  title: {
+    marginVertical: 30,
+  },
+  colorIngredient: {
+    color: 'white',
+    left: 22,
+    fontSize: 18,
+  },
 });

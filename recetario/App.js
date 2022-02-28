@@ -16,13 +16,10 @@ import RecipeDetails from './src/components/RecipeDetails';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const App = () => {
-  
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar />
       <HorizontalList />
-
-
     </SafeAreaView>
   );
 };
@@ -32,11 +29,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.BG,
     flex: 1,
     // marginTop: Platform.OS === 'ios' ? 50:0,
-  },
-  close: {
-    position: 'absolute',
-    left: 15,
-    top: 15,
   },
 });
 export default App;
