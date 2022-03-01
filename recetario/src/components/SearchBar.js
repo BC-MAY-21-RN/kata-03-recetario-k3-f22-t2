@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ViewSafeArea, TextInput, StyleSheet } from "react-native";
+import { View, TextInput, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../utils/colors.js';
 
@@ -17,8 +17,7 @@ const SearchBar = () => {
 
 const styles = StyleSheet.create({
     inputSearch: {
-    
-      height: '5%',
+      height: 30,
       justifyContent: 'center',
       alignItems: 'center',
       //marginHorizontal: 40, 
