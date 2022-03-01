@@ -6,14 +6,11 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, Pressable, Text, Modal} from 'react-native';
+import React from 'react';
+import {SafeAreaView, StyleSheet } from 'react-native';
 import SearchBar from './src/components/SearchBar';
 import colors from './src/utils/colors';
-import ListItem from './src/components/ListItem';
 import HorizontalList from './src/components/HorizontalList';
-import RecipeDetails from './src/components/RecipeDetails';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const App = () => {
   return (

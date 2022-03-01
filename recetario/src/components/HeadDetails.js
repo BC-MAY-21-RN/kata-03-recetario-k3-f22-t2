@@ -15,7 +15,7 @@ export default HeadDetails;
 const styles = StyleSheet.create({
   head: {
     position: 'absolute',
-    bottom: 350,
+    bottom: 370,
     left: 25,
   },
   title: {
