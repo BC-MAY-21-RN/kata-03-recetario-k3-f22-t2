@@ -251,4 +251,44 @@ export default [
       },
     ],
   },
+  {
+    id: 7,
+    name: 'Pollo a la brava',
+    image:
+      'https://static.wetaca.com/products/674/detail/pollo-con-salsa-brava_B.jpg',
+    servings: 3,
+    category: 'Recent',
+    ingredients: [
+      {
+        id: 1,
+        nameIngredient: 'Pollo',
+        cant: '1 unidad',
+      },
+      {
+        id: 2,
+        nameIngredient: 'Patatas',
+        cant: '500 gr',
+      },
+      {
+        id: 3,
+        nameIngredient: 'Tomate Frito',
+        cant: '1 unidad',
+      },
+      {
+        id: 4,
+        nameIngredient: 'Perejil',
+        cant: '1 rama',
+      },
+      {
+        id: 5,
+        nameIngredient: 'Sal',
+        cant: 'c/n',
+      },
+      {
+        id: 6,
+        nameIngredient: 'Chile',
+        cant: '1 cucharadita',
+      },
+    ],
+  },
 ];
