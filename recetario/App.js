@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet } from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import SearchBar from './src/components/SearchBar';
 import colors from './src/utils/colors';
 import HorizontalList from './src/components/HorizontalList';

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import React, {useState} from 'react';
 import recipes from '../utils/recipes';
 import colors from '../utils/colors';
 import CarrouselRecipes from './CarrouselRecipes';
@@ -7,20 +7,42 @@ import CarrouselRecipes from './CarrouselRecipes';
 const HorizontalList = () => {
   const Trending = recipes.filter(recipe => recipe.category == 'Trending');
   const Recent = recipes.filter(recipe => recipe.category == 'Recent');
-  return (
-    <View>
-      <CarrouselRecipes recipesList={Trending} title='Trending'/>
-      <CarrouselRecipes recipesList={Recent} title='Recent'/>
-    </View>
-  )
-}
+  const [favRecipes, setFavRecipes] = useState([]);
 
-export default HorizontalList
+  const Favorite = recipes.filter(recipe => favRecipes.includes(recipe.id));
+  return (
+    <ScrollView>
+      <CarrouselRecipes
+        recipesList={Trending}
+        title="Trending"
+        favRecipes={favRecipes}
+        setFavRecipes={setFavRecipes}
+        sizeRecipe="small"
+      />
+      <CarrouselRecipes
+        recipesList={Recent}
+        title="Recent"
+        favRecipes={favRecipes}
+        setFavRecipes={setFavRecipes}
+        sizeRecipe="medium"
+      />
+      <CarrouselRecipes
+        recipesList={Favorite}
+        title="Favorites"
+        favRecipes={favRecipes}
+        setFavRecipes={setFavRecipes}
+        sizeRecipe="medium"
+      />
+    </ScrollView>
+  );
+};
+
+export default HorizontalList;
 
 const styles = StyleSheet.create({
   title: {
     color: colors.TITLE,
     fontSize: 25,
-    paddingBottom: 10
-  }
-})
+    paddingBottom: 10,
+  },
+});

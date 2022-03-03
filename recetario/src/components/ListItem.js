@@ -11,16 +11,23 @@ import React, {useState} from 'react';
 import RecipeDetails from './RecipeDetails';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const ListItem = ({recipe}) => {
+const ListItem = ({recipe, favRecipes, setFavRecipes, sizeRecipe}) => {
   const [modalVisible, setModalVisible] = useState(false);
+
+  const addRecipeToFav = id => {
+    // Agregar al state
+    const newRecipes = [...favRecipes, id];
+    setFavRecipes(newRecipes);
+  };
+
+  console.log('sizeRecipe: ' + sizeRecipe);
+
   return (
     <View style={styles.container}>
       <Pressable onPress={() => setModalVisible(true)}>
         <Image
           style={[
-            recipe.category == 'Trending'
-              ? styles.imgTreding
-              : styles.imgRecent,
+            sizeRecipe == 'small' ? styles.imgTreding : styles.imgRecent,
             {borderRadius: 10},
           ]}
           source={{uri: recipe.image}}
@@ -46,12 +53,16 @@ const ListItem = ({recipe}) => {
             </Pressable>
             <View style={styles.iconsRight}>
               <Icon name="upload" size={30} color="#ffffff" />
-              <Icon
-                style={styles.heart}
-                name="heart-o"
-                size={30}
-                color="#ffffff"
-              />
+              <Pressable
+                style={styles.close}
+                onPress={() => addRecipeToFav(recipe.id)}>
+                <Icon
+                  style={styles.heart}
+                  name="heart-o"
+                  size={30}
+                  color="#ffffff"
+                />
+              </Pressable>
             </View>
           </View>
         </View>
