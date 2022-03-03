@@ -13,14 +13,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ListItem = ({recipe, favRecipes, setFavRecipes, sizeRecipe}) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [isliked, setIsliked] = useState(false);
 
   const addRecipeToFav = id => {
-    // Agregar al state
-    const newRecipes = [...favRecipes, id];
-    setFavRecipes(newRecipes);
-  };
+    if (favRecipes.includes(recipe.id)) {
+      const favActuales = favRecipes.filter(fav => fav !== id);
+      console.log(favActuales);
+      setFavRecipes(favActuales);
+    } else {
+      // Agregar al state
+      const newRecipes = [...favRecipes, id];
+      setFavRecipes(newRecipes);
+    }
 
-  console.log('sizeRecipe: ' + sizeRecipe);
+    setIsliked(!isliked);
+  };
 
   return (
     <View style={styles.container}>
@@ -58,9 +65,9 @@ const ListItem = ({recipe, favRecipes, setFavRecipes, sizeRecipe}) => {
                 onPress={() => addRecipeToFav(recipe.id)}>
                 <Icon
                   style={styles.heart}
-                  name="heart-o"
+                  name="heart"
                   size={30}
-                  color="#ffffff"
+                  color={isliked ? 'red' : '#ffffff'}
                 />
               </Pressable>
             </View>

@@ -26,13 +26,15 @@ const HorizontalList = () => {
         setFavRecipes={setFavRecipes}
         sizeRecipe="medium"
       />
-      <CarrouselRecipes
-        recipesList={Favorite}
-        title="Favorites"
-        favRecipes={favRecipes}
-        setFavRecipes={setFavRecipes}
-        sizeRecipe="medium"
-      />
+      {Favorite.length > 0 && (
+        <CarrouselRecipes
+          recipesList={Favorite}
+          title="Favorites"
+          favRecipes={favRecipes}
+          setFavRecipes={setFavRecipes}
+          sizeRecipe="medium"
+        />
+      )}
     </ScrollView>
   );
 };
