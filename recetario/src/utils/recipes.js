@@ -291,4 +291,84 @@ export default [
       },
     ],
   },
+  {
+    id: 8,
+    name: 'Locro',
+    image:
+      'https://t2.rg.ltmcdn.com/es/posts/8/2/2/locro_argentino_10228_600.jpg',
+    servings: 5,
+    category: 'Recent',
+    ingredients: [
+      {
+        id: 1,
+        nameIngredient: 'Porotos blancos',
+        cant: '250gr',
+      },
+      {
+        id: 2,
+        nameIngredient: 'Maíz blanco partido',
+        cant: '250gr',
+      },
+      {
+        id: 3,
+        nameIngredient: 'Chorizo colorado',
+        cant: '1 unidad',
+      },
+      {
+        id: 4,
+        nameIngredient: 'Pechito y cuerito de cerdo',
+        cant: '400gr',
+      },
+      {
+        id: 5,
+        nameIngredient: 'Falda',
+        cant: '300gr',
+      },
+      {
+        id: 6,
+        nameIngredient: 'Panceta',
+        cant: '200gr',
+      },
+      {
+        id: 7,
+        nameIngredient: 'Cebollas',
+        cant: '3 unidades',
+      },
+      {
+        id: 8,
+        nameIngredient: 'Cebollas de verdeo',
+        cant: '2 unidades',
+      },
+      {
+        id: 9,
+        nameIngredient: 'Puerro',
+        cant: '1 unidad',
+      },
+      {
+        id: 10,
+        nameIngredient: 'Calabaza o zapallo',
+        cant: '1 unidad',
+      },
+      {
+        id: 11,
+        nameIngredient: 'Sal',
+        cant: 'c/n',
+      },
+      {
+        id: 12,
+        nameIngredient: 'Pimienta',
+        cant: 'c/n',
+      },
+      {
+        id: 13,
+        nameIngredient: 'Orégano',
+        cant: 'c/n',
+      },
+      {
+        id: 14,
+        nameIngredient: 'Pimentón',
+        cant: 'c/n',
+      },
+    ],
+  },
 ];
